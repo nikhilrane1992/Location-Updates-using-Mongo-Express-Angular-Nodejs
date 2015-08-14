@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body ng-app="chat">
+<div ng-controller="chatCtrl">
+<div ng-repeat="i in chatResult">
+	{{i.username}}
+	{{i.message}}
+</div>
+<input type="text" ng-model="message">{{message}}
+<input type="text" ng-model="username">{{username}}
+<button ng-click="saveData()" type="button">Submit</button>
+</div>
+<script src="static/jquery.js"></script>
+<script src="static/angular.min.js"></script>
+<script src="static/app.js"></script>
+</body>
+</html>
