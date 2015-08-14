@@ -31,7 +31,7 @@ app.post('/get/latlng', function(req, res){
 });
 
 //save post data
-app.post('/save/chat/data', function(req, res){
+app.post('/save/location_update/data', function(req, res){
 	var d = new Date().getTime(); 
 	console.log(d);
 	new locationUpdates({
@@ -47,6 +47,6 @@ app.post('/save/chat/data', function(req, res){
 });
 
 app.get('/', function(req, res){
-	res.sendFile(__dirname + '/people.html');
+	res.sendFile(__dirname + '/locationUpdates.html');
 });
 

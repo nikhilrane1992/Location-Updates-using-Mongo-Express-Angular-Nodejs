@@ -3,14 +3,26 @@
 <head>
 	<title></title>
 </head>
-<body ng-app="chat">
-<div ng-controller="chatCtrl">
-<div ng-repeat="i in chatResult">
-	{{i.username}}
-	{{i.message}}
+<body ng-app="locationUpdate">
+<div ng-controller="locationUpdateCtrl">
+<div ng-repeat="i in locationResult">
+	{{i._id}}
+	{{i.lat}}
+	{{i.lng}}
+	{{i.app_time_stamp}}
+	{{i.server_time_stamp}}
 </div>
-<input type="text" ng-model="message">{{message}}
-<input type="text" ng-model="username">{{username}}
+
+_id:String,
+	lat:String,
+	lng:String,
+	app_time_stamp:String,
+	server_time_stamp:String
+<input type="text" ng-model="_id" placeholder="_id">
+<input type="text" ng-model="lat" placeholder="lat">
+<input type="text" ng-model="lng" placeholder="lng">
+<input type="text" ng-model="app_time_stamp" placeholder="app_time_stamp">
+<input type="text" ng-model="server_time_stamp" placeholder="server_time_stamp">
 <button ng-click="saveData()" type="button">Submit</button>
 </div>
 <script src="static/jquery.js"></script>
