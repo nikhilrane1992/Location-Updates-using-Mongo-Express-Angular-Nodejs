@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<link rel="stylesheet" type="text/css" href="static/bootstrap.min.css">
+</head>
+<body ng-app="locationUpdate" style="margin-top:50px;">
+<div ng-controller="locationUpdateCtrl">
+<div class="fluid container">
+<div class="well">
+<h3>Display Data</h3>
+	
+<div class="row">
+<div class="col-md-6 form-group">
+<input type="text" ng-model="imei_no" class="form-control">
+</div>
+<div class="col-md-6 form-group">
+<button ng-click="getData()" type="button" class="btn btn-default">Get Data</button>
+</div>
+</div>
+	<table class="table table-bordered table-hover" ng-show="locationResult.length>0">
+	<tr>
+		<th>IMEI Number</th>
+		<th>Lat</th>
+		<th>Long</th>
+		<th>App Time Stamp</th>
+		<th>Server Time Stamp</th>
+	</tr>
+	<tr ng-repeat="i in locationResult">
+		<td>{{i.imei_no}}</td>
+		<td>{{i.lat}}</td>
+		<td>{{i.lng}}</td>
+		<td>{{i.app_time_stamp}}</td>
+		<td>{{i.server_time_stamp}}</td>
+	</tr>
+</table>
+</div>
+
+<div class="well">
+<h3>Insert Data</h3>
+<div class="row">
+	<div class="col-md-2 form-group">
+<input type="text" ng-model="imei_no" placeholder="imei_no" class="form-control">	
+	</div>
+	<div class="col-md-2 form-group">
+<input type="text" ng-model="lat" placeholder="lat" class="form-control">
+	</div>
+	<div class="col-md-2 form-group">
+<input type="text" ng-model="lng" placeholder="lng" class="form-control">
+	</div>
+	<div class="col-md-3 form-group">
+<input type="text" ng-model="app_time_stamp" placeholder="app_time_stamp" class="form-control">
+	</div>
+	<div class="col-md-3 form-group">
+<input type="text" ng-model="server_time_stamp" placeholder="server_time_stamp" class="form-control">
+	</div>
+</div>
+<button ng-click="saveData()" type="button" class="btn btn-default">Submit</button>
+<span style="color:red;">{{errormsg}}</span>
+</div>
+</div>
+</div>
+<script src="static/jquery.js"></script>
+<script src="static/angular.min.js"></script>
+<script src="static/bootstrap.min.js"></script>
+<script src="static/app.js"></script>
+</body>
+</html>
